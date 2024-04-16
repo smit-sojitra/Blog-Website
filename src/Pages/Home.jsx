@@ -7,12 +7,14 @@ import Preloader from '../Components/Preloader'
 const Home = () => {
   const [loading,setLoading] = useState(true);
   useEffect(()=>{
-  window.addEventListener('load', () => {
-    setLoading(false);
-  });
+    window.addEventListener('load',()=>{
+      setLoading(false);
+    })
   },[])
   return (
     <div className='flex w-full items-center h-full flex-col bg'>
+      <div className='w-11/12 max-w-[670px] flex flex-col mx-auto'>
+
       {
         loading?
         (<Preloader/>):
@@ -26,6 +28,7 @@ const Home = () => {
           </div>
         )
       }
+      </div>
     </div>
   )
 }
