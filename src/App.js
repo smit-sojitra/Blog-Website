@@ -1,5 +1,5 @@
 import './App.css';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect,useState} from 'react';
 import { AppContext } from './Context/AppContext';
 import { Route,Routes, useLocation, useSearchParams } from 'react-router-dom';
 import Home from './Pages/Home';
@@ -8,11 +8,8 @@ import { TagPage } from './Pages/TagPage';
 import BlogPage from './Pages/BlogPage';
 
 export const App = () => {
-
-  function preloader(){
-    
-  }
   
+  const [loading,setLoading] = useState(true);
   const [searchParams,setSearchParams]= useSearchParams();
   const location = useLocation();
   const {fetchBlogs} = useContext(AppContext);
@@ -30,11 +27,15 @@ export const App = () => {
     else{
       fetchBlogs(page);
     }
+    setTimeout(() => {
+        setLoading(false);
+      
+    }, 2000);
   },[location.pathname,location.search])
   
     return (
     <Routes>
-      <Route path='/' element={<Home/>}></Route>
+      <Route path='/' element={<Home loading={loading}/>}></Route>
       <Route path='/blogs/:blogId' element={<BlogPage/>}></Route>
       <Route path='/tags/:tag' element={<TagPage/>}></Route>
       <Route path='/categories/:categoryddd' element={<CategoryPage/>}></Route>
