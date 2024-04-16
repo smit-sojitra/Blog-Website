@@ -8,6 +8,10 @@ import { TagPage } from './Pages/TagPage';
 import BlogPage from './Pages/BlogPage';
 
 export const App = () => {
+
+  function preloader(){
+    
+  }
   
   const [searchParams,setSearchParams]= useSearchParams();
   const location = useLocation();
