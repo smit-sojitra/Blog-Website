@@ -19,7 +19,7 @@ const Card = ({post}) => {
             {
                 post.tags.map((tag,index)=>{
                     return <NavLink key={index} to={`/tags/${tag.replaceAll(" ","-")}`}>
-                        <span className="text-xs font-semibold underline text-blue-700 cursor-pointer txt" >#{tag}</span>
+                        <span className="text-xs font-semibold underline text-blue-700 cursor-pointer tagTxt" >#{tag}</span>
                     </NavLink>
                 })
             }

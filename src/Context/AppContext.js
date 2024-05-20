@@ -1,11 +1,19 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { baseUrl } from "../baseUrl";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export const  AppContext = createContext();
-
+    const prefer = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
     function AppContextProvider({children}){
+    const[isDark,setIsDark] = useState(prefer);
+    const theme = isDark ? "dark" : "light"
+    const toggleTheme = () =>{
+        setIsDark((preTheme)=>!preTheme);
+    }
+    useEffect(()=>{
+        document.documentElement.setAttribute("data-theme",theme)
+    },[isDark])
     const [page,setPage] = useState(1);
     const [loading,setLoading] = useState(false);
     const [posts,setPosts] = useState([]);
@@ -58,7 +66,9 @@ export const  AppContext = createContext();
         fetchBlogs,
         changeHandler,
         totalPages,
-        setTotalPages
+        setTotalPages,
+        toggleTheme,
+        theme
     }
     return <AppContext.Provider value={value}>
         {children}

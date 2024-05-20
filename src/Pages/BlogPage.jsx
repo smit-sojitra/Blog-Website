@@ -40,7 +40,7 @@ const BlogPage = () => {
         <div className='w-11/12 max-w-[670px] flex flex-col mx-auto gap-y-7 mt-[100px] mb-6 '>
             <Header/>
             <div>
-                <button className='border-2 border-gray-300 py-1 px-4 rounded-md' onClick={()=>navigate(-1)}>Back</button>
+                <button className='border-2 btn py-1 px-4 rounded-md txt' onClick={()=>navigate(-1)}>Back</button>
             </div>
             <div >
                 {
@@ -50,7 +50,7 @@ const BlogPage = () => {
                     (
                         <div className='flex flex-col gap-y-7'>
                             <Card post={blog}/>
-                            <h2 className='font-bold capitalize text-3xl'>Related blogs</h2>
+                            <h2 className='font-bold capitalize text-3xl txt'>Related blogs</h2>
                             {
                                 relatedBlogs.map((post)=>{
                                 return <Card key={post.id} post={post}/>
@@ -59,7 +59,7 @@ const BlogPage = () => {
                         </div>
                     ):
                     (
-                        <div>no blog found</div>
+                        <div className='txt'>no blog found</div>
                     )
                 }
             </div>

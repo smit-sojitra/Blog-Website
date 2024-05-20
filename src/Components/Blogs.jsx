@@ -14,7 +14,7 @@ const Blogs = () => {
             (
                 posts.length ===0?
                 (<div className='w-full flex justify-center items-center h-screen'>
-                    <p>No posts found</p>
+                    <p className='txt'>No posts found</p>
                 </div>) :
                 (posts.map((post)=>{
                     return <Card key={post.id} post={post}/>
