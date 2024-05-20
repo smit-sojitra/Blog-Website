@@ -12,15 +12,20 @@
   }
 body{
     background-color: var(--bg-color);
+    transition: all;
+    transition: 500ms;
 }
 .bg{
   background-color: var(--bg-color);
   border-bottom-color: var(--bg-color);
   border-top-color: var(--bg-border);
   box-shadow: var(--bg-color) 0px 0px 0px 2px, var(--bg-color) 0px 4px 6px -1px, var(--bg-color) 0px 1px 0px inset;
+  transition: all;
+  transition: 500ms;
 }
 .btn{
   border-color: var(--bg-border);
+  
 }
 .txt{
   color: var(--txt-color);

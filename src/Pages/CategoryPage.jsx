@@ -10,7 +10,7 @@ const CategoryPage = () => {
   const category = location.pathname.split('/').at(-1).replaceAll("-"," ");
   const navigate = useNavigate();
   return (
-    <div  className='w-full h-full bg'>
+    <div  className='w-full h-full'>
 
     <div className='w-11/12 max-w-[670px] flex flex-col mx-auto gap-y-7 mt-[100px]'>
       <Header/>

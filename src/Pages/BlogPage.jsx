@@ -36,7 +36,7 @@ const BlogPage = () => {
         fetchBlogs();
     },[location.pathname])
   return (
-    <div className='w-full h-full bg'>
+    <div className='w-full h-full'>
         <div className='w-11/12 max-w-[670px] flex flex-col mx-auto gap-y-7 mt-[100px] mb-6 '>
             <Header/>
             <div>
